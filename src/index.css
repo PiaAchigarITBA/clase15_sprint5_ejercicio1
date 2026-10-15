@@ -1,0 +1,49 @@
+:root {
+  --azul: #1d3d8f;
+  --amarillo: #ffcb05;
+  --rojo: #e3350d;
+  --texto: #1f2430;
+  --mute: #646b7d;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--texto);
+  /* el fondo de rayos del programa de TV */
+  background: repeating-conic-gradient(from 0deg at 50% 40%, #3a6fd8 0deg 10deg, #2c5bc4 10deg 20deg);
+  min-height: 100vh;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, p { margin: 0; }
+button { font: inherit; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: 0.55; }
+
+.cabecera { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 16px 20px; }
+.logo { font-weight: 900; font-size: 22px; color: var(--amarillo); text-shadow: 3px 3px 0 var(--azul); text-decoration: none; }
+.nav a { color: white; text-decoration: none; font-weight: 700; padding: 6px 14px; border-radius: 999px; }
+.nav a.active { background: var(--amarillo); color: var(--azul); }
+
+.contenido { max-width: 720px; margin: 0 auto; padding: 8px 20px 60px; }
+.panel { background: white; border-radius: 24px; padding: 24px; display: grid; gap: 16px; justify-items: center; text-align: center; box-shadow: 0 10px 0 rgba(0, 0, 0, 0.15); }
+
+.titulo-tv { font-size: 34px; font-weight: 900; color: var(--amarillo); -webkit-text-stroke: 2px var(--azul); letter-spacing: 1px; }
+.marcador { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+.chip { background: #eef1fb; border-radius: 999px; padding: 6px 14px; font-weight: 700; }
+
+.imagen { width: 240px; height: 240px; object-fit: contain; transition: filter 0.6s ease; }
+/* la SILUETA: brightness(0) pinta todo de negro */
+.silueta { filter: brightness(0); }
+
+.adivinanza { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.adivinanza input { font: inherit; font-size: 18px; padding: 10px 14px; border: 2px solid #d5d8e2; border-radius: 12px; min-width: 240px; }
+.adivinanza input:focus { outline: 3px solid var(--amarillo); }
+.boton { background: var(--rojo); color: white; border: 0; padding: 12px 22px; border-radius: 999px; font-weight: 800; }
+.boton.secundario { background: #eef1fb; color: var(--azul); }
+.boton.grande { font-size: 22px; padding: 16px 34px; }
+
+.error-campo { color: #a01c2c; font-weight: 600; }
+.resultado { font-size: 22px; font-weight: 800; }
+.resultado.acierto { color: #1f8a4c; }
+.resultado.fallo, .resultado.rendido { color: var(--rojo); }
+.nombre-pokemon { text-transform: capitalize; }
+.estado { padding: 40px 0; color: var(--mute); }
+.estado.error { color: #a01c2c; }
+.tipos { color: var(--mute); text-transform: capitalize; }
